@@ -32,12 +32,13 @@
 <body>
 	<div class="kotak_login"></div>
 		<p class="tulisan_login"> Silahkan Login</p>
-			<form action="ceklogin.php" method="post" role="form">
+			<form action="index.php" method="post" role="form">
 				<label> Username</label>
 				<input type="text" name="username" class="form_login" placeholder="Username" autocompleter="off">
 				<label> Password</label>
 				<input type="password" name="password" class="form_login" placeholder="Password" autocompleter="off">
 				<input type="submit" name="tombol_login" value="login">
+				<input type="submit" name="tombol_register" value="register">
 </form>
 </div>
 </body>

@@ -4,14 +4,29 @@
      $username = $_POST['username'];
      $password = $_POST['password'];
 
-     $sql = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password' ") or die (mysql_error());
+     $qry = "SELECT * FROM
+           tb_login
+      WHERE username = '".$username."'
+      AND password
+       = '".$password"'";
 
-     if(mysqli_num_rows($sql) == 0) {
+     $sql = mysqli_query($connection, $qry)
+
+     $cek =mysqli_num_rows($sql);
+
+     if($cek == 0) {
         echo '<script language = "javascript">
         alert("Username dan Password Salah! Silahkan Login Kembali."); document.location="Login.php";</script>';
      }else{
-        echo '<script language = "javascript">
-        alert("Anda berhasil Login!."); document.locatioan="halaman.php";</script>';
+        $data = mysqli_fetch_assoc($sql);
+
+        $_SESSION['username'] = $data['username'];
+        $_SESSION['level'] = $data['level'];
+
+         echo '<script language = "javascript">
+         alert("Anda Berhasil Login.!">;               
+         document.location="halaman.php";
+         </script>';
      } 
 
      ?>
