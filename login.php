@@ -74,7 +74,7 @@
                 <div class="card">
                     <div class="card-body bg-light">
                         <h5 class="text-center">Login Aplikasi</h5>
-                        <form action="config/aksi_login2.php" method="POST">
+                        <form action="config/aksi_login.php" method="POST">
                             <div class="mb-3">
                                 <label class="form-label">Username</label>
                                 <input type="text" name="username" class="form-control" required>
